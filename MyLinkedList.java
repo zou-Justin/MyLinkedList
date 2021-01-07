@@ -4,7 +4,9 @@ public class MyLinkedList{
  public MyLinkedList(){
    size = 0;
  }
- public int size();
+ public int size(){
+   return size;
+ };
  public boolean add(String value);
  public void add(int index, String value);
  public String get(int index);
