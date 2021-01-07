@@ -29,7 +29,10 @@ public class MyLinkedList{
   public String get(int index){
     return helperIndexMethod(index).getData();
   }
-  //public String set(int index, String value);
+  public String set(int index, String value){
+     helperIndexMethod(index).setData(value);
+     return helperIndexMethod(index).getData();
+  }
  // public String toString();
  //Any helper method that returns a Node object MUST BE PRIVATE!
 }
