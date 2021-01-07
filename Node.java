@@ -14,4 +14,13 @@ public class Node{
   public Node getPrev(){
     return prev;
   }
+  public Node setPrev(Node previous){
+    prev = previous;
+  }
+  public Node setNext(Node Next){
+    next = Next;
+  }
+  public String setData(String value){
+    data = value;
+  }
 }
