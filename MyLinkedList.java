@@ -28,6 +28,12 @@ public class MyLinkedList{
    Node temp = helperIndexMethod(index);
    Node temp2 = new Node(value);
    Node temp3 = temp.getNext();
+   if (size == 0){
+     start = end = temp2;
+     start.setNext(null);
+     start.setPrev(null);
+   }
+  
    temp.setNext(temp2);
    temp2.setPrev(temp);
    temp2.setNext(temp3);
