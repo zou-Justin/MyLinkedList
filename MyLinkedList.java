@@ -26,9 +26,11 @@ public class MyLinkedList{
  }
  public void add(int index, String value){
    Node temp = helperIndexMethod(index);
-   Node temp2 = temp.getNext();
-   temp = temp.setNext().setData(value);
-   temp2.getNext().setPrev().setData(value);
+   Node temp2 = new Node(value);
+   Node temp3 = temp.getNext();
+   temp.setNext(temp2);
+   temp2.setPrev(temp);
+   temp2.setNext(temp3);
   }
  
  private Node helperIndexMethod(int index){
