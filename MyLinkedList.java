@@ -23,6 +23,9 @@ public class MyLinkedList{
    return true;
  }
  public void add(int index, String value){
+   if (index < 0 || index > size){
+     throw new IndexOutOfBoundsException("Index out of bound");
+   }
    Node temp = helperIndexMethod(index);
    Node temp2 = new Node(value);
    Node temp3 = temp.getNext();
@@ -47,6 +50,7 @@ public class MyLinkedList{
    temp.setNext(temp2);
    temp2.setPrev(temp);
    temp2.setNext(temp3);
+   temp3.setPrev(temp2);
  }
   }
  
@@ -58,9 +62,15 @@ public class MyLinkedList{
    return term;
  }
   public String get(int index){
+    if (index < 0 || index > size){
+      throw new IndexOutOfBoundsException("Index out of bound");
+    }
     return helperIndexMethod(index).getData();
   }
   public String set(int index, String value){
+    if (index < 0 || index > size){
+      throw new IndexOutOfBoundsException("Index out of bound");
+    }
      helperIndexMethod(index).setData(value);
      return helperIndexMethod(index).getData();
   }
