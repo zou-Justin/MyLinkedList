@@ -10,14 +10,19 @@ public class MyLinkedList{
    return size;
  }
  public boolean add(String value){
+    Node temp = new node(value);
    if (size == 0){
-     
+     start = end = temp;
+     start.setNext(null);
+     start.setPrev(null);
+     size++;     
    }
    else{
    size++;
    end.setNext(temp);
    end = end.getNext();
-   return true;}
+  }
+   return true;
  }
  public void add(int index, String value){
    Node temp = helperIndexMethod(index);
