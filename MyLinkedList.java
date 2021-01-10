@@ -33,6 +33,13 @@ public class MyLinkedList{
      start.setNext(null);
      start.setPrev(null);
    }
+   else if (index == 0){
+     Node startTemp = start;
+     start.setPrev(temp2);
+     start = temp2;
+     start.setNext(startTemp);
+   }
+   
   
    temp.setNext(temp2);
    temp2.setPrev(temp);
