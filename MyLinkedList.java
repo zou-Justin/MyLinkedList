@@ -3,14 +3,12 @@ public class MyLinkedList{
  private Node start,end;  
  public MyLinkedList(){
    size = 0;
-   start = Node(null);
-   end = Node(null);
  }
  public int size(){
    return size;
  }
  public boolean add(String value){
-    Node temp = new node(value);
+    Node temp = new Node(value);
    if (size == 0){
      start = end = temp;
      start.setNext(null);
@@ -68,7 +66,15 @@ public class MyLinkedList{
   }
  public String toString()
  {
+   Node Start = start;
+   String s = "[";
+   for (int i = 0 ; i < size; i++){
+     s += Start.getData() + ",";
+     Start = Start.getNext();
+  }
+  return s;
+}
    
- }
+   
  //Any helper method that returns a Node object MUST BE PRIVATE!
 }
