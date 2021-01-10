@@ -39,11 +39,17 @@ public class MyLinkedList{
      start = temp2;
      start.setNext(startTemp);
    }
-   
-  
+   else if (index == size){
+     Node endTemp = end;
+     end.setPrev(temp2);
+     end = temp2;
+     end.setNext(endTemp);
+   }
+   else{
    temp.setNext(temp2);
    temp2.setPrev(temp);
    temp2.setNext(temp3);
+ }
   }
  
  private Node helperIndexMethod(int index){
