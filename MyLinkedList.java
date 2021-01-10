@@ -9,14 +9,15 @@ public class MyLinkedList{
  }
  public boolean add(String value){
    size++;
-   end = new Node(value);
+   end.setNext(temp);
+   end = end.getNext();
    return true;
  }
  public void add(int index, String value){
-   // Node temp = helperIndexMethod(index);
-   // Node temp2 = temp.getNext();
-   // temp = temp.setNext().setData(value);
-   // temp2.getNext().setPrev().setData(value);
+   Node temp = helperIndexMethod(index);
+   Node temp2 = temp.getNext();
+   temp = temp.setNext().setData(value);
+   temp2.getNext().setPrev().setData(value);
   }
  
  private Node helperIndexMethod(int index){
@@ -33,6 +34,9 @@ public class MyLinkedList{
      helperIndexMethod(index).setData(value);
      return helperIndexMethod(index).getData();
   }
- // public String toString();
+ public String toString()
+ {
+   
+ }
  //Any helper method that returns a Node object MUST BE PRIVATE!
 }
