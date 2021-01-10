@@ -3,15 +3,21 @@ public class MyLinkedList{
  private Node start,end;  
  public MyLinkedList(){
    size = 0;
+   start = Node(null);
+   end = Node(null);
  }
  public int size(){
    return size;
  }
  public boolean add(String value){
+   if (size == 0){
+     
+   }
+   else{
    size++;
    end.setNext(temp);
    end = end.getNext();
-   return true;
+   return true;}
  }
  public void add(int index, String value){
    Node temp = helperIndexMethod(index);
