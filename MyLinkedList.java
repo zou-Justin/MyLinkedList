@@ -85,22 +85,33 @@ public String remove(int index){
   if (size == 1){
     start = null;
     end = null;
+    size--;
+    return null;
   }
   else if(index == 0){
+    Node startTemp = start;
     start = start.getNext();
     start.setPrev(null);
+    size--;
+    return startTemp.getData();
   }
   else if (index == size - 1){
+    Node endTemp = end;
     end = end.getPrev();
     end.setNext(null);
+    size--;
+    return endTemp.getData();
   }
   else {
     Node temp = helperIndexMethod(index-1);
     Node temp2 = helperIndexMethod(index+1);
+    Node temp3 = helperIndexMethod(index);
     temp.setNext(temp2);
     temp2.setPrev(temp);
+    size--;
+    return temp3.getData();
   }  
-  size--;
+  
 }
  public String toString()
  {
