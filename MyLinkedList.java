@@ -146,30 +146,30 @@ public void extend(MyLinkedList other){
    String s = "[";
    for (int i = 0 ; i < size; i++){
     if (i != size-1){
-     s += Start.getData() + ",";
+     s += Start.getData() + ", ";
    }
    else{
-     s+= Start.getData() + "]";
+     s+= Start.getData();
    }
    Start = Start.getNext();
   }
   return s+ "]";
 }
-public String toStringReversed()
-{
-  Node Start = start;
-  String s = "[";
-  for (int i = size ; i > 0; i--){
-   if (i != 0){
-    s += Start.getData() + ",";
-  }
-  else{
-    s+= Start.getData() + "]";
-  }
-  Start = Start.getNext();
- }
- return s + "]";
-}
+// public String toStringReversed()
+// {
+//   Node Start = start;
+//   String s = "[";
+//   for (int i = size ; i > 0; i--){
+//    if (i != 0){
+//     s += Start.getData() + ",";
+//   }
+//   else{
+//     s+= Start.getData();
+//   }
+//   Start = Start.getNext();
+//  }
+//  return s + "]";
+// }
    
  //Any helper method that returns a Node object MUST BE PRIVATE!
 }
