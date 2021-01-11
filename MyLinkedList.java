@@ -3,6 +3,8 @@ public class MyLinkedList{
  private Node start,end;  
  public MyLinkedList(){
    size = 0;
+   start = null;
+   end = null;
  }
  public int size(){
    return size;
@@ -15,11 +17,12 @@ public class MyLinkedList{
      end.setPrev(null);
      size++;     
    }
-   else
-   {
-   size++;
+   else{
+   Node temp2 = end;
    end.setNext(temp);
-   end = end.getNext();
+   end = temp;
+   temp.setNext(null);
+   size++;
   }
    return true;
  }
@@ -56,7 +59,7 @@ public class MyLinkedList{
  
  private Node helperIndexMethod(int index){
    Node term = start;
-   for (int i = 1; i < index;i++){
+   for (int i = 0; i < index;i++){
      term = start.getNext();
    }
    return term;
