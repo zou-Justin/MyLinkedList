@@ -85,7 +85,6 @@ public String remove(int index){
   if (size == 1){
     start = null;
     end = null;
-    size--;
   }
   else if(index == 0){
     start = start.getNext();
@@ -95,6 +94,13 @@ public String remove(int index){
     end = end.getPrev();
     end.setNext(null);
   }
+  else {
+    Node temp = helperIndexMethod(index-1);
+    Node temp2 = helperIndexMethod(index+1);
+    temp.setNext(temp2);
+    temp2.setPrev(temp);
+  }  
+  size--;
 }
  public String toString()
  {
