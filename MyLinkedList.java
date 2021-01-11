@@ -134,9 +134,8 @@ public void extend(MyLinkedList other){
     other.start.setPrev(end);
     end = other.end;
     size += other.size;
-  }
-  
-  
+    other.size = 0;
+  }  
  }
  public String toString()
  {
@@ -157,7 +156,21 @@ public void extend(MyLinkedList other){
   }
   return s;
 }
-   
+public String toStringReversed()
+{
+  Node Start = start;
+  String s = "[";
+  for (int i = size ; i > 0; i--){
+   if (i != 0){
+    s += Start.getData() + ",";
+  }
+  else{
+    s+= Start.getData() + "]";
+  }
+  Start = Start.getNext();
+ }
+ return s;
+}
    
  //Any helper method that returns a Node object MUST BE PRIVATE!
 }
