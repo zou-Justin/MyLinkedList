@@ -137,17 +137,13 @@ public void extend(MyLinkedList other){
     temp.setPrev(end);
     end = other.end;
     size += other.size;
-    other.size = 0;    
+    other.size = 0;
   }  
  }
  public String toString()
  {
    Node Start = start;
    String s = "[";
-   if (size == 0){
-     s += Start.getData() + "]";
-     return s;
-   }
    for (int i = 0 ; i < size; i++){
     if (i != size-1){
      s += Start.getData() + ",";
@@ -157,7 +153,7 @@ public void extend(MyLinkedList other){
    }
    Start = Start.getNext();
   }
-  return s;
+  return s+ "]";
 }
 public String toStringReversed()
 {
