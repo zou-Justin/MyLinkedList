@@ -11,11 +11,12 @@ public class MyLinkedList{
     Node temp = new Node(value);
    if (size == 0){
      start = end = temp;
-     start.setNext(null);
-     start.setPrev(null);
+     end.setNext(null);
+     end.setPrev(null);
      size++;     
    }
-   else{
+   else
+   {
    size++;
    end.setNext(temp);
    end = end.getNext();
@@ -28,30 +29,29 @@ public class MyLinkedList{
    }
    Node temp = helperIndexMethod(index);
    Node temp2 = new Node(value);
-   Node temp3 = temp.getNext();
+   Node temp3 = temp2.getNext();
+   Node temp4 = helperIndexMethod(index -1);
    if (size == 0){
-     start = end = temp2;
-     start.setNext(null);
-     start.setPrev(null);
+     start = temp2;
+     end = temp2;
    }
    else if (index == 0){
-     Node startTemp = start;
      start.setPrev(temp2);
      start = temp2;
-     start.setNext(startTemp);
+     start.setNext(temp3);
    }
    else if (index == size){
-     Node endTemp = end;
-     end.setPrev(temp2);
+     temp2.setPrev(end);
+     end.setNext(temp2);
      end = temp2;
-     end.setNext(endTemp);
    }
    else{
-   temp.setNext(temp2);
-   temp2.setPrev(temp);
-   temp2.setNext(temp3);
-   temp3.setPrev(temp2);
+   temp.setPrev(temp2);
+   temp4.setNext(temp2);
+   temp2.setNext(temp);
+   temp2.setPrev(temp4);
  }
+ size++;
   }
  
  private Node helperIndexMethod(int index){
