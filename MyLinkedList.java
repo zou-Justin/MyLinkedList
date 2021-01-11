@@ -124,6 +124,11 @@ public void extend(MyLinkedList other){
     end = other.end;
     size = other.size;
   }
+  else if (size == 0 && other.size == 0){
+    start = null;
+    end = null;
+    size = 0;
+  }
   
   
  }
