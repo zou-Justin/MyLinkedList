@@ -74,9 +74,9 @@ public class MyLinkedList{
     if (index < 0 || index > size){
       throw new IndexOutOfBoundsException("Index out of bound");
     }
-     Node temp = helperIndexMethod(index);
+     String temp = helperIndexMethod(index).getData();
      helperIndexMethod(index).setData(value);
-     return temp.getData();
+     return temp;
   }
   
 public String remove(int index){
@@ -156,21 +156,21 @@ public void extend(MyLinkedList other){
   }
   return s+ "]";
 }
-// public String toStringReversed()
-// {
-//   Node Start = start;
-//   String s = "[";
-//   for (int i = size ; i > 0; i--){
-//    if (i != 0){
-//     s += Start.getData() + ",";
-//   }
-//   else{
-//     s+= Start.getData();
-//   }
-//   Start = Start.getNext();
-//  }
-//  return s + "]";
-// }
+public String toStringReversed()
+{
+  Node Start = start;
+  String s = "[";
+  for (int i = size ; i > 0; i--){
+   if (i != 0){
+    s += Start.getData() + ",";
+  }
+  else{
+    s+= Start.getData();
+  }
+  Start = Start.getNext();
+ }
+ return s + "]";
+}
    
  //Any helper method that returns a Node object MUST BE PRIVATE!
 }
