@@ -31,7 +31,7 @@ public class MyLinkedList{
      throw new IndexOutOfBoundsException("Index out of bound");
    }
    Node temp2 = new Node(value);
-   Node temp3 = temp2.getNext();
+   Node temp3 = start;
    if (size == 0){
      start = temp2;
      end = temp2;
