@@ -118,11 +118,13 @@ public void extend(MyLinkedList other){
     start = other.start;
     end = other.end;
     size = other.size;
+    other.size = 0;
   }
   else if (other.size == 0){
     other.start = start;
     end = other.end;
     size = other.size;
+    size = 0;
   }
   else if (size == 0 && other.size == 0){
     start = null;
@@ -130,11 +132,12 @@ public void extend(MyLinkedList other){
     size = 0;
   }
   else{
-    end.setNext(other.start);
-    other.start.setPrev(end);
+    Node temp = other.start;
+    end.setNext(temp);
+    temp.setPrev(end);
     end = other.end;
     size += other.size;
-    other.size = 0;
+    other.size = 0;    
   }  
  }
  public String toString()
@@ -169,7 +172,7 @@ public String toStringReversed()
   }
   Start = Start.getNext();
  }
- return s;
+ return s + "]";
 }
    
  //Any helper method that returns a Node object MUST BE PRIVATE!
