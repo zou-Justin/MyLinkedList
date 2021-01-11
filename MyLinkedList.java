@@ -30,10 +30,8 @@ public class MyLinkedList{
    if (index < 0 || index > size){
      throw new IndexOutOfBoundsException("Index out of bound");
    }
-   Node temp = helperIndexMethod(index);
    Node temp2 = new Node(value);
    Node temp3 = temp2.getNext();
-   Node temp4 = helperIndexMethod(index -1);
    if (size == 0){
      start = temp2;
      end = temp2;
@@ -49,10 +47,12 @@ public class MyLinkedList{
      end = temp2;
    }
    else{
-   temp.setPrev(temp2);
-   temp4.setNext(temp2);
-   temp2.setNext(temp);
-   temp2.setPrev(temp4);
+     Node temp = helperIndexMethod(index);
+     Node temp4 = helperIndexMethod(index-1);
+     temp2.setNext(temp);
+     temp2.setPrev(temp4);
+     temp4.setNext(temp2);
+     temp.setPrev(temp2);
  }
  size++;
   }
@@ -60,7 +60,7 @@ public class MyLinkedList{
  private Node helperIndexMethod(int index){
    Node term = start;
    for (int i = 0; i < index;i++){
-     term = start.getNext();
+     term = term.getNext();
    }
    return term;
  }
@@ -81,14 +81,18 @@ public class MyLinkedList{
  {
    Node Start = start;
    String s = "[";
+   if (size == 0){
+     s += Start.getData() + "]";
+     return s;
+   }
    for (int i = 0 ; i < size; i++){
-     if (i != size-1){
+    if (i != size-1){
      s += Start.getData() + ",";
-     Start = Start.getNext();
    }
    else{
      s+= Start.getData() + "]";
    }
+   Start = Start.getNext();
   }
   return s;
 }
