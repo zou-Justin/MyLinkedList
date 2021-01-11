@@ -88,8 +88,12 @@ public String remove(int index){
     size--;
   }
   else if(index == 0){
-    start = start.getPrev();
-    start.setNext(null);
+    start = start.getNext();
+    start.setPrev(null);
+  }
+  else if (index == size - 1){
+    end = end.getPrev();
+    end.setNext(null);
   }
 }
  public String toString()
