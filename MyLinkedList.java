@@ -77,6 +77,16 @@ public class MyLinkedList{
      helperIndexMethod(index).setData(value);
      return helperIndexMethod(index).getData();
   }
+  
+public String remove(int index){
+  if (index < 0 || index > size){
+    throw new IndexOutOfBoundsException("Index out of bound");
+  }
+  if (size == 1){
+    start = null;
+    end = null;
+  }
+}
  public String toString()
  {
    Node Start = start;
