@@ -113,6 +113,20 @@ public String remove(int index){
   }  
   
 }
+public void extend(MyLinkedList other){
+  if (size == 0){
+    start = other.start;
+    end = other.end;
+    size = other.size;
+  }
+  else if (other.size == 0){
+    other.start = start;
+    end = other.end;
+    size = other.size;
+  }
+  
+  
+ }
  public String toString()
  {
    Node Start = start;
