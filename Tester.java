@@ -8,7 +8,7 @@ public class Tester{
     words.add("hi4");
     words.add("hi21");
     words.add("hi32");
-    words.add(0,"bob");
+    words.remove(2);
     //words.set(0,"bob");
     //System.out.print(words.get(1));
     System.out.print(words);
