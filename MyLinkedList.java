@@ -82,8 +82,13 @@ public class MyLinkedList{
    Node Start = start;
    String s = "[";
    for (int i = 0 ; i < size; i++){
+     if (i != size-1){
      s += Start.getData() + ",";
      Start = Start.getNext();
+   }
+   else{
+     s+= Start.getData() + "]";
+   }
   }
   return s;
 }
