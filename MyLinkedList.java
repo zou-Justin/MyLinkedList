@@ -65,7 +65,7 @@ public class MyLinkedList{
    return term;
  }
   public String get(int index){
-    if (index < 0 || index > size){
+    if (index < 0 || index > size-1){
       throw new IndexOutOfBoundsException("Index out of bound");
     }
     return helperIndexMethod(index).getData();
@@ -80,7 +80,7 @@ public class MyLinkedList{
   }
   
 public String remove(int index){
-  if (index < 0 || index > size){
+  if (index < 0 || index > size-1){
     throw new IndexOutOfBoundsException("Index out of bound");
   }
   if (size == 1){
