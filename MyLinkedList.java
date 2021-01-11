@@ -85,6 +85,11 @@ public String remove(int index){
   if (size == 1){
     start = null;
     end = null;
+    size--;
+  }
+  else if(index == 0){
+    start = start.getPrev();
+    start.setNext(null);
   }
 }
  public String toString()
