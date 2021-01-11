@@ -129,6 +129,12 @@ public void extend(MyLinkedList other){
     end = null;
     size = 0;
   }
+  else{
+    end.setNext(other.start);
+    other.start.setPrev(end);
+    end = other.end;
+    size += other.size;
+  }
   
   
  }
